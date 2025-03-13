@@ -1,0 +1,49 @@
+CREATE DATABASE SportFlow;
+USE SportFlow;
+
+CREATE TABLE Member(
+    MemberID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    Sport VARCHAR(100) NOT NULL,
+    Role ENUM("Member") DEFAULT "Member"
+);
+
+CREATE TABLE Trainers (
+    TrainerID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    Speciality VARCHAR(100) NOT NULL,
+    Role ENUM("Trainer") DEFAULT "Trainer"
+);
+
+CREATE TABLE Sessions (
+    SessionID INT AUTO_INCREMENT PRIMARY KEY,
+    MemberID INT,
+    TrainerID INT,
+    SessionDateTime DATETIME NOT NULL,
+    FOREIGN KEY (MemberID) REFERENCES Member(MemberID) ON DELETE CASCADE,
+    FOREIGN KEY (TrainerID) REFERENCES Trainers(TrainerID) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Admins (
+    AdminID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    Role ENUM("Admin") DEFAULT "Admin"
+);
+
+INSERT INTO Admins(Name,Password) VALUES (
+'soufyane', '2003'
+);
+CREATE DATABASE IF NOT EXISTS SportFlow;
+USE SportFlow;
+
+
+
+
+
+SHOW TABLES FROM SportFlow;
+
+
