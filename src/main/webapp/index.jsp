@@ -14,7 +14,6 @@
         <p class="lead text-muted">Choose your role below to get started</p>
     </div>
     <div class="row g-4">
-        <!-- ADMIN Card -->
         <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-header bg-primary text-white text-center py-4">
@@ -23,7 +22,7 @@
                 <div class="card-body text-center">
                     <p class="card-text">Manage users, tasks, and all administrative activities seamlessly.</p>
                     <form>
-                        <a href="login.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
+                        <a href="loginAdmin.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
                             <i class="fas fa-check-circle me-2"></i>Select Admin
                         </a>
                     </form>
@@ -31,7 +30,6 @@
             </div>
         </div>
 
-        <!-- MEMBER Card -->
         <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-header bg-success text-white text-center py-4">
@@ -40,15 +38,14 @@
                 <div class="card-body text-center">
                     <p class="card-text">Engage in activities and make the most of the platform features.</p>
                     <form>
-                        <button type="submit" class="btn btn-success w-100" aria-label="Select Member">
+                        <a href="loginMember.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
                             <i class="fas fa-check-circle me-2"></i>Select Member
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- TRAINER Card -->
         <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-header bg-warning text-dark text-center py-4">
@@ -57,9 +54,10 @@
                 <div class="card-body text-center">
                     <p class="card-text">Organize training sessions and guide members with expertise.</p>
                     <form>
-                        <button type="submit" class="btn btn-warning w-100" aria-label="Select Trainer">
+
+                        <a href="loginTrainer.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
                             <i class="fas fa-check-circle me-2"></i>Select Trainer
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>

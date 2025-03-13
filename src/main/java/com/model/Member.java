@@ -3,11 +3,28 @@ package com.model;
 import java.util.Date;
 
 public class Member {
-    int id;
-    String name,sport;
-    Date DateOfBirth;
+    private int id;
+    private String name;
+    private String sport;
+    private String password;
+    private Date dateOfBirth;
 
     public Member() {
+    }
+
+    public Member(int id, String name, String sport, Date dateOfBirth, String password) {
+        this.id = id;
+        this.name = name;
+        this.sport = sport;
+        this.dateOfBirth = dateOfBirth;
+        this.password = password;
+    }
+
+    public Member(String name, String sport, Date dateOfBirth, String password) {
+        this.name = name;
+        this.sport = sport;
+        this.dateOfBirth = dateOfBirth;
+        this.password = password;
     }
 
     public int getId() {
@@ -18,8 +35,8 @@ public class Member {
         this.id = id;
     }
 
-    public String getName(String name) {
-        return this.name;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
@@ -34,26 +51,19 @@ public class Member {
         this.sport = sport;
     }
 
-    public Date getDateOfBirth(String dateOfBirth) {
-        return DateOfBirth;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public void setDateOfBirth(Date dateOfBirth) {
-        DateOfBirth = dateOfBirth;
-    }
-
-    public Member(int id, String name, String sport, Date dateOfBirth) {
-        this.id = id;
-        this.name = name;
-        this.sport = sport;
-        DateOfBirth = dateOfBirth;
-    }
-
-
-
-    public Member(String name, String sport, Date dateOfBirth) {
-        this.name = name;
-        this.sport = sport;
-        DateOfBirth = dateOfBirth;
+        this.dateOfBirth = dateOfBirth;
     }
 }

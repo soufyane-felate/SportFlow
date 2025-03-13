@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.Admin;
 
 import com.dao.LoginAdminDao;
 import com.model.Admin;
@@ -22,7 +22,7 @@ public class LoginAdminServlet extends HttpServlet {
         if (name == null || name.trim().isEmpty() ||
                 password == null || password.trim().isEmpty()) {
             request.setAttribute("error", "Invalid username or password.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("loginAdmin.jsp").forward(request, response);
             return;
         }
 
@@ -34,13 +34,13 @@ public class LoginAdminServlet extends HttpServlet {
                 response.sendRedirect("dashboard.jsp");
             } else {
                 request.setAttribute("error", "Invalid credentials. Try again.");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("loginAdmin.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             System.err.println("Servlet Database error: " + e.getMessage());
             request.setAttribute("error", "Database error! Please try again later.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("loginAdmin.jsp").forward(request, response);
         }
     }
 }

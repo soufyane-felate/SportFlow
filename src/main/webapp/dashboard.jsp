@@ -100,7 +100,6 @@
     </style>
 </head>
 <body>
-<!-- Sidebar -->
 <div class="sidebar">
     <div class="logo">SportFlow</div>
     <nav class="nav flex-column">
@@ -122,9 +121,7 @@
     </nav>
 </div>
 
-<!-- Main Content -->
 <div class="main-content">
-    <!-- Header -->
     <div class="header">
         <div class="welcome">
             Welcome, <%= session.getAttribute("admin") != null ? ((com.model.Admin) session.getAttribute("admin")).getName() : "Admin" %>!
@@ -134,7 +131,6 @@
         </a>
     </div>
 
-    <!-- Dashboard Cards -->
     <div class="row">
         <div class="col-md-6">
             <div class="card">

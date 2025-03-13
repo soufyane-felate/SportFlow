@@ -28,7 +28,7 @@ public class AuthenticationFilter implements Filter {
         if (isLoggedIn) {
             chain.doFilter(request, response);
         } else {
-            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.jsp");
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/loginAdmin.jsp");
         }
     }
 
