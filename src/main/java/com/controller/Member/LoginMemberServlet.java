@@ -13,7 +13,10 @@ import java.sql.SQLException;
 
 @WebServlet("/MemberLogin")
 public class LoginMemberServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+
+        request.getRequestDispatcher("loginMember.jsp").forward(request, response);
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         MembersDao membersDao = new MembersDao();
@@ -21,7 +24,7 @@ public class LoginMemberServlet extends HttpServlet {
             Member member = membersDao.authenticationMember(name,password);
             if (member != null) {
                 request.getSession().setAttribute("member", member);
-                request.getRequestDispatcher("MemberLogin.jsp").forward(request, response);
+                request.getRequestDispatcher("loginMember.jsp").forward(request, response);
             }else  {
                 request.setAttribute("error", "Invalid username or password.");
             }

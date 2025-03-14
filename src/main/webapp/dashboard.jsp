@@ -1,4 +1,7 @@
+<%@ page import="com.dao.MembersDao" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page import="com.dao.MembersDao" %>
+<%@ page import="com.dao.TrainersDao" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,12 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<%
+    MembersDao membersDao = new MembersDao();
+    int totalMembers = membersDao.getTotalMembers();
+    int newMembers = membersDao.getNewMembersThisMonth();
+    %>
     <style>
         body {
             background-color: #f8f9fa;
@@ -103,7 +112,7 @@
 <div class="sidebar">
     <div class="logo">SportFlow</div>
     <nav class="nav flex-column">
-        <a class="nav-link active" href="dashboard.jsp">
+        <a class="nav-link active" href="dashboard">
             <i class="fas fa-tachometer-alt me-2"></i>Dashboard
         </a>
         <a class="nav-link" href="add-member.jsp">
@@ -138,8 +147,8 @@
                     <i class="fas fa-users me-2"></i>Members Overview
                 </div>
                 <div class="card-body">
-                    <p>Total Members: 120</p>
-                    <p>New Members (This Month): 10</p>
+                    <p>Total Members:<%= totalMembers %></p>
+                    <p>New Members (This Month): <%= newMembers %></p>
                     <a href="list-members.jsp" class="btn btn-primary">
                         <i class="fas fa-list me-2"></i>View Members
                     </a>

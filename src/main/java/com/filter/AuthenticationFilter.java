@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-
+/*
 @WebFilter("/dashboard.jsp")
 public class AuthenticationFilter implements Filter {
 
@@ -23,16 +23,21 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession(false);
 
-        boolean isLoggedIn = (session != null && session.getAttribute("admin") != null);
+        boolean isLoggedIn = false;
 
-        if (isLoggedIn) {
+        if (session != null && session.getAttribute("admin") != null) {
+            isLoggedIn = true;
             chain.doFilter(request, response);
-        } else {
-            httpResponse.sendRedirect(httpRequest.getContextPath() + "/loginAdmin.jsp");
+        } else if (session != null && session.getAttribute("member") != null) {
+            isLoggedIn = true;
+            chain.doFilter(request, response);
         }
     }
 
     @Override
     public void destroy() {
     }
+
+
 }
+*/

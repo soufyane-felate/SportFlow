@@ -22,7 +22,7 @@
                 <div class="card-body text-center">
                     <p class="card-text">Manage users, tasks, and all administrative activities seamlessly.</p>
                     <form>
-                        <a href="loginAdmin.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
+                        <a href="login" class="btn btn-primary w-100" aria-label="Select Admin">
                             <i class="fas fa-check-circle me-2"></i>Select Admin
                         </a>
                     </form>
@@ -38,7 +38,7 @@
                 <div class="card-body text-center">
                     <p class="card-text">Engage in activities and make the most of the platform features.</p>
                     <form>
-                        <a href="loginMember.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
+                        <a href="MemberLogin" class="btn btn-primary w-100" aria-label="Select Admin">
                             <i class="fas fa-check-circle me-2"></i>Select Member
                         </a>
                     </form>
@@ -55,7 +55,7 @@
                     <p class="card-text">Organize training sessions and guide members with expertise.</p>
                     <form>
 
-                        <a href="loginTrainer.jsp" class="btn btn-primary w-100" aria-label="Select Admin">
+                        <a href="loginTrainer" class="btn btn-primary w-100" aria-label="Select Admin">
                             <i class="fas fa-check-circle me-2"></i>Select Trainer
                         </a>
                     </form>
